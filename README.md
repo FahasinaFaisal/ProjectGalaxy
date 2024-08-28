@@ -31,13 +31,13 @@ Before model training, the datasets undergo several preprocessing steps to ensur
 
 2. Data Visualization:
 
-  A. Histograms: Plotted histograms for various features in both datasets to understand their distributions.
+        A. Histograms: Plotted histograms for various features in both datasets to understand their distributions.
 
-  B. Pair Plots: Created pair plots to visualize the relationships between features and target variables.
+        B. Pair Plots: Created pair plots to visualize the relationships between features and target variables.
 
-  C.Box Plots: Generated box plots to show feature distributions across different subsamples.
+        C.Box Plots: Generated box plots to show feature distributions across different subsamples.
 
-  D.Violin Plots: Produced violin plots to visualize the distribution and density of features by subsample.
+        D.Violin Plots: Produced violin plots to visualize the distribution and density of features by subsample.
 
 3.	Feature Selection: The features selected for model training include feat1 to feat5, which are normalized versions of the original features such as mag_r, u-g, etc. These normalized features are chosen because they provide a more stable input for the machine learning models, leading to potentially better performance.
 
@@ -52,37 +52,43 @@ The project involves the application of several machine learning models to predi
 
 ### 1.	Random Forest Regressor:
 •	Description: Random Forest is an ensemble learning method that constructs multiple decision trees during training and outputs the mean prediction of the individual trees. It is robust against overfitting and is effective in handling large datasets with higher dimensionality.
+
 •	Hyperparameters:
-	n_estimators: Number of trees in the forest (tuned with values 50, 100, 200).
-	max_features: Number of features to consider at each split (tuned with 'sqrt' and 'log2').
-	max_depth: Maximum depth of the tree (tuned with values None, 10, 20, 30).
+      n_estimators: Number of trees in the forest (tuned with values 50, 100, 200).
+      max_features: Number of features to consider at each split (tuned with 'sqrt' and 'log2').
+      max_depth: Maximum depth of the tree (tuned with values None, 10, 20, 30).
 
 ### 2.	Gradient Boosting Regressor:
 •	Description: Gradient Boosting is an ensemble technique that builds models sequentially, each new model attempting to correct the errors made by the previous ones. It is known for its high accuracy but can be prone to overfitting if not properly tuned.
+
 •	Hyperparameters:
-	n_estimators: Number of boosting stages (tuned with values 50, 100, 200).
-	learning_rate: Shrinks the contribution of each tree (tuned with values 0.01, 0.1, 0.2).
-	max_depth: Maximum depth of the individual estimators (tuned with values 3, 4, 5).
+      n_estimators: Number of boosting stages (tuned with values 50, 100, 200).
+      learning_rate: Shrinks the contribution of each tree (tuned with values 0.01, 0.1, 0.2).
+      max_depth: Maximum depth of the individual estimators (tuned with values 3, 4, 5).
 
 ### 3.	Neural Network (MLPRegressor):
 •	Description: The MLPRegressor is a feedforward artificial neural network model. It can capture complex non-linear relationships in the data. The network used in this project consists of a single hidden layer with 100 neurons, utilizing the ReLU activation function and the Adam optimizer.
+
 •	Hyperparameters:
-	hidden_layer_sizes: Size of the hidden layers (set to (100,)).
-	activation: Activation function for the hidden layer (set to 'relu').
-	solver: Optimizer (set to 'adam').
-	max_iter: Maximum number of iterations (set to 500).
+      	hidden_layer_sizes: Size of the hidden layers (set to (100,)).
+        activation: Activation function for the hidden layer (set to 'relu').
+        solver: Optimizer (set to 'adam').
+        max_iter: Maximum number of iterations (set to 500).
 
 ### 4.	Decision Tree Regressor:
 •	Description: Decision Tree Regressor is a simple, interpretable model that splits the data into subsets based on feature values. It works well for capturing non-linear patterns but can overfit if not pruned.
+
 •	Hyperparameters:
-	No specific tuning applied; the default settings are used to maintain simplicity and interpretability.
+    	No specific tuning applied; the default settings are used to maintain simplicity and interpretability.
 
 ### 5.	XGBoost Regressor:
 •	Description: XGBoost is an optimized implementation of gradient boosting. It is designed for efficiency, speed, and performance. XGBoost is particularly useful for large datasets and complex feature spaces.
+
 •	Hyperparameters:
-	n_estimators: Number of boosting rounds (tuned with values 50, 100, 200).
-	learning_rate: Controls the contribution of each tree (tuned with values 0.01, 0.1, 0.2).
-	max_depth: Maximum depth of a tree (tuned with values 3, 4, 5).
+	    n_estimators: Number of boosting rounds (tuned with values 50, 100, 200).
+	    learning_rate: Controls the contribution of each tree (tuned with values 0.01, 0.1, 0.2).
+	    max_depth: Maximum depth of a tree (tuned with values 3, 4, 5).
+
 Each model is trained using the Happy A and Teddy A datasets and then evaluated on the Happy B, Happy C, Happy D, Teddy B, Teddy C, and Teddy D datasets. The evaluation metrics include Root Mean Square Error (RMSE), Mean Absolute Error (MAE), and R-squared (R^2) values. These metrics are used to compare the performance of the models across the different test sets, helping identify the model that best generalizes to unseen data.
 
 ## Results Visualization:
@@ -93,11 +99,11 @@ Each model is trained using the Happy A and Teddy A datasets and then evaluated 
 
 3.Residual Plots: Plotted residuals to check the performance and fit of the models.
 
-#**Usage Instructions**
+## **Usage Instructions**
 To use the code and models provided in this project, follow these steps:
 1.	Clone the Repository:
 •	Use the following command to clone the repository
-git clone https://github.com/username/repository-name.git
+git clone [https://github.com/username/repository-name.git](https://github.com/FahasinaFaisal/ProjectGalaxy.git)
 •	Navigate into the project directory
 cd repository-name
 2.	Install Dependencies:
@@ -118,7 +124,7 @@ Jupyter Notebook Source File
 •	The script in that file will generate evaluation metrics and visualizations such as scatter plots for true vs. predicted values and save these results for further analysis.
 
 
-**Conclusion**
+## Conclusion
 This project demonstrates the application of various machine learning models to predict spectroscopic redshift (z_spec) using features from the Happy and Teddy datasets. The project involved thorough data preprocessing, model training, and evaluation across multiple datasets to ensure the robustness and generalizability of the models. The results indicate the strengths and limitations of each model, with metrics such as RMSE, MAE, and R-squared providing a quantitative assessment of performance.
 By following the usage instructions, users can replicate the results, apply the models to new data, and extend the analysis further. The detailed preprocessing steps and model descriptions ensure that others can understand, utilize, and build upon this work effectively. The inclusion of EDA plots aids in comprehending the underlying structure of the data, which is crucial for informed model development and interpretation of results.
 This project serves as a comprehensive example of how to approach predictive modeling in a structured and methodical manner, making it a valuable resource for both practitioners and researchers in the field of data science and machine learning.
