@@ -1,4 +1,4 @@
-**##Estimating Galaxy Distances with Advanced Regression Models**
+#Estimating Galaxy Distances with Advanced Regression Models
 
 This project focuses on developing predictive models to estimate the z_spec variable, a spectroscopic redshift measurement, using various features from the Happy and Teddy datasets. The goal is to apply different machine learning models to identify which model performs best in predicting z_spec based on selected features. The models used include Random Forest, Gradient Boosting, Neural Network, Decision Tree, and XGBoost.
 The project is structured around training the models on a subset of the datasets (Happy A and Teddy A) and evaluating their performance on the remaining subsets (Happy B, C, D, and Teddy B, C, D). This approach allows for a thorough evaluation of the model's predictive capabilities across different datasets that contain slightly varying features.
